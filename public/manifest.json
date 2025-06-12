@@ -1,0 +1,22 @@
+{
+  "name": "Familieweekend Exloo 2025",
+  "short_name": "Exloo 2025",
+  "description": "Familieweekend Veddertjes & Antonisse",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#064e3b",
+  "theme_color": "#10b981",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/api/icon?size=192",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/api/icon?size=512",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
