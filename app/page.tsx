@@ -594,42 +594,97 @@ export default function LandalFamilieweekendApp() {
                     <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
                       <h4 className="font-semibold text-landal-green mb-2">🛁 Wellness</h4>
                       <ul className="text-sm text-gray-700 space-y-1">
-                        <li>• Privé Finse sauna</li>
-                        <li>• 3 badkamers met regendouches</li>
-                        <li>• Bubbelbad & sunshower</li>
-                        <li>• Gratis zwembad toegang</li>
+                        <li>• Privé Finse sauna in elk huisje</li>
+                        <li>• Regendouches & sunshower</li>
+                        <li>• Gratis zwembad + wellness bij Fletcher Hotel</li>
+                        <li>• Sauna, stoomcabine & fitness toegang</li>
                       </ul>
                     </div>
                     
                     <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
                       <h4 className="font-semibold text-landal-green mb-2">🍳 Keuken</h4>
                       <ul className="text-sm text-gray-700 space-y-1">
-                        <li>• Volledig uitgeruste keuken</li>
+                        <li>• Volledig uitgeruste luxe keuken</li>
                         <li>• Vaatwasser & combi-magnetron</li>
-                        <li>• Quooker (kokend water)</li>
                         <li>• Nespresso koffieapparaat</li>
+                        <li>• Maaltijdbezorging beschikbaar</li>
                       </ul>
                     </div>
                     
                     <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
-                      <h4 className="font-semibold text-landal-green mb-2">🛏️ Slapen</h4>
+                      <h4 className="font-semibold text-landal-green mb-2">🛏️ Comfort</h4>
                       <ul className="text-sm text-gray-700 space-y-1">
-                        <li>• 4 slaapkamers per villa</li>
+                        <li>• 4 slaapkamers per luxe villa</li>
                         <li>• Bedden opgemaakt bij aankomst</li>
-                        <li>• Handdoeken aanwezig</li>
-                        <li>• 2 wellness villa's voor 16 personen</li>
+                        <li>• Handdoeken & beddengoed aanwezig</li>
+                        <li>• Modern design met 2 verdiepingen</li>
                       </ul>
                     </div>
                     
                     <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
-                      <h4 className="font-semibold text-landal-green mb-2">🏡 Comfort</h4>
+                      <h4 className="font-semibold text-landal-green mb-2">🚗 Praktisch</h4>
                       <ul className="text-sm text-gray-700 space-y-1">
-                        <li>• Ruime woonkamer met TV</li>
-                        <li>• Terras met tuinmeubilair</li>
-                        <li>• 2 verdiepingen</li>
                         <li>• Gratis WiFi & parkeren</li>
+                        <li>• Elektrische auto laadpalen</li>
+                        <li>• Receptievrije aankomst vanaf 16:00</li>
+                        <li>• Deels autovrij park</li>
                       </ul>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Park Facilities */}
+              <div className="landal-card p-6 shadow-card mb-6">
+                <h3 className="text-xl font-bold text-landal-green text-center mb-4">🌳 Landal PUUR Exloo Faciliteiten</h3>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">🎯 Sport & Spel</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Minigolf & tennisbaan</li>
+                        <li>• Padel courts beschikbaar</li>
+                        <li>• Natuurlijke speeltuin met vijver</li>
+                        <li>• The Game Box activiteiten</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">🚴 Natuur</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Fietsverhuur op het park</li>
+                        <li>• Direct toegang tot UNESCO Hondsrug</li>
+                        <li>• Mountainbike & BMX routes</li>
+                        <li>• Eindeloze wandel- en fietsroutes</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">🍽️ Eten & Drinken</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Restaurant op het park</li>
+                        <li>• Bezorgservice naar je huisje</li>
+                        <li>• Ontbijt met champagne service</li>
+                        <li>• Foodsharing diners & tapas</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">✨ Bijzonder</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Luxe wellness resort (33 villa's)</li>
+                        <li>• Tussen heide, bossen & veengebieden</li>
+                        <li>• The Saber-Toothed Tiger Trail</li>
+                        <li>• Focus op rust & natuurbeleving</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-landal-light rounded-lg p-3 border border-landal-border text-center">
+                    <p className="text-gray-700 text-sm">
+                      <strong>💡 Goed om te weten:</strong> PUUR Exloo heeft geen Bollo Club kinderanimatie - 
+                      de focus ligt op luxe, wellness en natuurbeleving in een rustige omgeving.
+                    </p>
                   </div>
                 </div>
               </div>
