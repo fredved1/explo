@@ -236,7 +236,6 @@ export default function LandalFamilieweekendApp() {
     { id: "details", label: "Details", icon: Calendar },
     { id: "teams", label: "Teams", icon: Utensils },
     { id: "activiteiten", label: "Activiteiten", icon: TreePine },
-    { id: "polls", label: "Polls", icon: PartyPopper },
   ]
 
   return (
@@ -908,89 +907,6 @@ export default function LandalFamilieweekendApp() {
             </motion.div>
           )}
 
-          {activeTab === "polls" && (
-            <motion.div
-              key="polls"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="px-4 py-4"
-            >
-              <h2 className="text-2xl font-bold text-landal-green text-center mb-6">Polls</h2>
-
-              <div className="space-y-6">
-                {/* BBQ Poll */}
-                <div className="landal-card p-6 shadow-card">
-                  <h3 className="text-xl font-bold text-landal-green mb-4">🔥 Wie neemt de elektrische BBQ mee?</h3>
-                  <div className="space-y-4">
-                    {Object.entries(polls.bbq).map(([option, data]) => (
-                      <div key={option} className="bg-landal-light rounded-lg p-4 border border-landal-border">
-                        <div className="flex justify-between items-center mb-3">
-                          <span className="text-gray-800 font-semibold">{option}</span>
-                          <span className="bg-landal-green text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            {data.count}
-                          </span>
-                        </div>
-
-                        {data.voters && data.voters.length > 0 && (
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            {data.voters.map((voter, index) => (
-                              <span
-                                key={index}
-                                className="bg-white text-landal-green px-2 py-1 rounded text-xs flex items-center gap-1 border border-landal-border"
-                              >
-                                {voter}
-                                <button
-                                  onClick={() => handlePollUnsubscribe("bbq", option, voter)}
-                                  className="text-landal-gray hover:text-landal-green ml-1 text-xs"
-                                  title="Afmelden"
-                                >
-                                  ✕
-                                </button>
-                              </span>
-                            ))}
-                          </div>
-                        )}
-
-                        {showPollNameInput === `bbq-${option}` ? (
-                          <div className="flex flex-col gap-2">
-                            <input
-                              type="text"
-                              value={pollNameInput}
-                              onChange={(e) => setPollNameInput(e.target.value)}
-                              placeholder="Je naam..."
-                              className="w-full px-3 py-2 bg-white border border-landal-border rounded-lg text-gray-800 placeholder-landal-gray focus:ring-2 focus:ring-landal-green focus:border-transparent"
-                              onKeyPress={(e) => e.key === "Enter" && handlePollNameSubmit("bbq", option)}
-                              autoFocus
-                            />
-                            <button
-                              onClick={() => handlePollNameSubmit("bbq", option)}
-                              className="landal-button text-sm py-2"
-                            >
-                              Stemmen
-                            </button>
-                            <button
-                              onClick={() => setShowPollNameInput(null)}
-                              className="landal-button-secondary text-sm py-2"
-                            >
-                              Annuleren
-                            </button>
-                          </div>
-                        ) : (
-                          <button
-                            onClick={() => handlePollVote("bbq", option)}
-                            className="landal-button w-full text-sm py-2"
-                          >
-                            Stem op deze optie
-                          </button>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
 
           {activeTab === "activiteiten" && (
             <motion.div
