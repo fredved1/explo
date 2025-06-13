@@ -33,9 +33,9 @@ export default function LandalFamilieweekendApp() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const familyImages = [
-    "/placeholder.svg?height=600&width=400",
-    "/placeholder.svg?height=600&width=400",
-    "/placeholder.svg?height=600&width=400",
+    "/family-photo.jpg",
+    "/family-photo.jpg",
+    "/family-photo.jpg",
   ]
 
   useEffect(() => {
@@ -468,40 +468,28 @@ export default function LandalFamilieweekendApp() {
             >
               <h2 className="text-2xl font-bold text-landal-green text-center mb-6">Praktische Info</h2>
 
-              {/* Quick Overview */}
-              <div className="landal-card p-6 shadow-card mb-6">
-                <h3 className="text-xl font-bold text-landal-green text-center mb-4">📅 Weekend Overzicht</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-landal-light rounded-lg p-3 border border-landal-border text-center">
-                    <div className="text-xl font-bold text-landal-green mb-1">4</div>
-                    <div className="text-landal-gray text-sm">Dagen</div>
-                  </div>
-                  <div className="bg-landal-light rounded-lg p-3 border border-landal-border text-center">
-                    <div className="text-xl font-bold text-landal-green mb-1">16</div>
-                    <div className="text-landal-gray text-sm">Familie leden</div>
-                  </div>
-                  <div className="bg-landal-light rounded-lg p-3 border border-landal-border text-center">
-                    <div className="text-xl font-bold text-landal-green mb-1">2</div>
-                    <div className="text-landal-gray text-sm">Wellness huisjes</div>
-                  </div>
-                  <div className="bg-landal-light rounded-lg p-3 border border-landal-border text-center">
-                    <div className="text-xl font-bold text-landal-green mb-1">∞</div>
-                    <div className="text-landal-gray text-sm">Herinneringen</div>
-                  </div>
-                </div>
-              </div>
-
               {/* Location */}
               <div className="landal-card p-6 shadow-card mb-6">
                 <div className="w-12 h-12 bg-landal-light rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <span className="text-2xl">📍</span>
+                  <MapPin className="w-6 h-6 text-landal-green" />
                 </div>
-                <h3 className="text-xl font-bold text-landal-green text-center mb-4">Locatie</h3>
-                <div className="space-y-2 text-center">
+                <h3 className="text-xl font-bold text-landal-green text-center mb-4">📍 Locatie & Aankomst</h3>
+                <div className="space-y-3 text-center">
                   <p className="text-gray-800 text-lg font-semibold">Landal PUUR Exloo</p>
-                  <p className="text-landal-gray">Zuiderdiep 104</p>
-                  <p className="text-landal-gray">9571 BE Tweede Exloermond</p>
-                  <p className="text-landal-light-green text-sm mt-2">Luxe villa's met eigen Finse sauna</p>
+                  <p className="text-landal-gray">Zuiderdiep 104, 9571 BE Tweede Exloermond</p>
+                  <p className="text-landal-light-green text-sm">Luxe wellness villa's met eigen Finse sauna</p>
+                  
+                  <div className="mt-4 space-y-2">
+                    <div className="flex justify-between items-center border-b border-landal-border pb-2">
+                      <span className="text-landal-gray">Aankomst</span>
+                      <span className="text-gray-800 font-semibold">Vrij 20 juni, 16:00</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b border-landal-border pb-2">
+                      <span className="text-landal-gray">Vertrek</span>
+                      <span className="text-gray-800 font-semibold">Maa 23 juni, 10:30</span>
+                    </div>
+                  </div>
+
                   <a
                     href="https://maps.google.com/?q=Landal+PUUR+Exloo,+Zuiderdiep+104,+9571+BE+Tweede+Exloermond"
                     target="_blank"
@@ -513,29 +501,133 @@ export default function LandalFamilieweekendApp() {
                 </div>
               </div>
 
-              {/* Planning */}
+              {/* Travel Times */}
               <div className="landal-card p-6 shadow-card mb-6">
-                <div className="w-12 h-12 bg-landal-light rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Calendar className="w-6 h-6 text-landal-green" />
-                </div>
-                <h3 className="text-xl font-bold text-landal-green text-center mb-4">🕐 Planning</h3>
+                <h3 className="text-xl font-bold text-landal-green text-center mb-4">🚗 Reistijden naar Exloo</h3>
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center border-b border-landal-border pb-2">
-                    <span className="text-landal-gray">Aankomst</span>
-                    <span className="text-gray-800 font-semibold">Vrij 20 juni, 16:00</span>
+                  <div className="flex justify-between items-center bg-landal-light rounded-lg p-3">
+                    <span className="text-gray-800 font-medium">Vanuit Hengelo</span>
+                    <span className="text-landal-green font-semibold">50 min (70 km)</span>
                   </div>
-                  <div className="flex justify-between items-center border-b border-landal-border pb-2">
-                    <span className="text-landal-gray">Vertrek</span>
-                    <span className="text-gray-800 font-semibold">Maa 23 juni, 10:30</span>
+                  <div className="flex justify-between items-center bg-landal-light rounded-lg p-3">
+                    <span className="text-gray-800 font-medium">Vanuit Apeldoorn</span>
+                    <span className="text-landal-green font-semibold">1u 15m (90 km)</span>
                   </div>
-                  <div className="flex justify-between items-center border-b border-landal-border pb-2">
-                    <span className="text-landal-gray">Check-in</span>
-                    <span className="text-gray-800 font-semibold">Vanaf 16:00</span>
+                  <div className="flex justify-between items-center bg-landal-light rounded-lg p-3">
+                    <span className="text-gray-800 font-medium">Vanuit Amsterdam</span>
+                    <span className="text-landal-green font-semibold">1u 45m (165 km)</span>
                   </div>
-                  <div className="bg-landal-light rounded-lg p-3 mt-4">
-                    <p className="text-gray-800 text-sm">
-                      💡 <strong>Tip:</strong> Parkeren gratis op centrale parkeerplaats
-                    </p>
+                </div>
+              </div>
+
+              {/* Weather */}
+              <div className="landal-card p-6 shadow-card mb-6">
+                <h3 className="text-xl font-bold text-landal-green text-center mb-4">🌤️ Weersvoorspelling</h3>
+                <div className="text-center">
+                  <p className="text-landal-gray mb-3">Verwachting voor 20-23 juni 2025</p>
+                  <a
+                    href="https://www.buienradar.nl/weer/exloo/nl/2758019"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="landal-button text-sm"
+                  >
+                    ☀️ Bekijk op Buienradar
+                  </a>
+                </div>
+              </div>
+
+              {/* House Facilities */}
+              <div className="landal-card p-6 shadow-card mb-6">
+                <h3 className="text-xl font-bold text-landal-green text-center mb-4">🏠 Wat is er in de huisjes?</h3>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">🛁 Wellness</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Privé Finse sauna</li>
+                        <li>• 3 badkamers met regendouches</li>
+                        <li>• Bubbelbad & sunshower</li>
+                        <li>• Gratis zwembad toegang</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">🍳 Keuken</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Volledig uitgeruste keuken</li>
+                        <li>• Vaatwasser & combi-magnetron</li>
+                        <li>• Quooker (kokend water)</li>
+                        <li>• Nespresso koffieapparaat</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">🛏️ Slapen</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• 4 slaapkamers per villa</li>
+                        <li>• Bedden opgemaakt bij aankomst</li>
+                        <li>• Handdoeken aanwezig</li>
+                        <li>• 2 wellness villa's voor 16 personen</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">🏡 Comfort</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Ruime woonkamer met TV</li>
+                        <li>• Terras met tuinmeubilair</li>
+                        <li>• 2 verdiepingen</li>
+                        <li>• Gratis WiFi & parkeren</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Packing List */}
+              <div className="landal-card p-6 shadow-card mb-6">
+                <h3 className="text-xl font-bold text-landal-green text-center mb-4">🎒 Paklijst - Wat meenemen?</h3>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">👕 Kleding</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Zwemkleding voor zwembad/sauna</li>
+                        <li>• Comfortabele kleding</li>
+                        <li>• Regenjack (voor zekerheid)</li>
+                        <li>• Slippers voor sauna</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">🎮 Ontspanning</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Spelletjes voor gezellige avonden</li>
+                        <li>• Camera voor mooie herinneringen</li>
+                        <li>• Sportkleding voor activiteiten</li>
+                        <li>• Goede schoenen voor wandelen</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">💊 Persoonlijk</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Medicijnen & EHBO</li>
+                        <li>• Toiletspullen & tandenborstel</li>
+                        <li>• Zonnebrandcrème</li>
+                        <li>• Opladers voor apparaten</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <h4 className="font-semibold text-landal-green mb-2">✅ Handig</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Lekker flesje wijn of biertjes</li>
+                        <li>• Favoriete snacks</li>
+                        <li>• Powerbank</li>
+                        <li>• Goede stemming! 😄</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -560,32 +652,36 @@ export default function LandalFamilieweekendApp() {
                     id: "breakfast",
                     name: "Team Ochtendgloren",
                     icon: "☀️",
-                    desc: "Ontbijt & Lunch",
-                    details:
-                      "De helden die zorgen voor brood, croissants, beleg (zoet & hartig), eieren, yoghurt en sapjes voor de zaterdag en zondag.",
+                    desc: "Ontbijt & Lunch (zat + zon)",
+                    details: "Zorgt voor brood, croissants, beleg, eieren, yoghurt en sapjes voor zaterdag en zondag.",
                   },
                   {
                     id: "friday",
                     name: "Team Vrijdagavond",
-                    icon: "✨",
-                    desc: "Diner Dag 1",
-                    details:
-                      "Neemt de leiding voor het diner op de aankomstdag. Iets makkelijks en gezelligs om het weekend mee in te luiden?",
+                    icon: "🌅",
+                    desc: "Vrijdag diner",
+                    details: "Welkomstdiner voor de aankomstdag. Iets makkelijks en gezelligs!",
                   },
                   {
                     id: "saturday",
                     name: "Team Zaterdagavond",
                     icon: "🍽️",
-                    desc: "Het Hoofdgerecht!",
-                    details: "Pakt uit met het hoofdgerecht van het weekend. De culinaire climax!",
+                    desc: "Zaterdag diner",
+                    details: "Het hoofdgerecht van het weekend - de culinaire climax!",
+                  },
+                  {
+                    id: "lunch",
+                    name: "Team Zondaglunch",
+                    icon: "🥪",
+                    desc: "Zondag lunch",
+                    details: "Verzorgt een lekkere lunch voor zondag, iets hartigs en voedzaams.",
                   },
                   {
                     id: "drinks",
-                    name: "Team Vloeibare Vreugde & Snacks",
+                    name: "Team Vloeibare Vreugde",
                     icon: "🥂",
-                    desc: "Drank & Borrelhappen",
-                    details:
-                      "De onmisbare curatoren van de goede sfeer. Zij regelen de strategische voorraad wijn, bier, fris, chips en borrelhappen voor het hele weekend.",
+                    desc: "Drank & Snacks",
+                    details: "Wijn, bier, fris, chips en borrelhappen voor het hele weekend.",
                   },
                 ].map((team) => (
                   <motion.div
@@ -649,7 +745,7 @@ export default function LandalFamilieweekendApp() {
                           </div>
                         ) : (
                           <button onClick={() => handleTeamSelect(team.id)} className="landal-button w-full">
-                            Aanmelden voor {team.name}
+                            Aanmelden
                           </button>
                         )}
                       </div>
@@ -760,121 +856,295 @@ export default function LandalFamilieweekendApp() {
               exit={{ opacity: 0 }}
               className="px-4 py-4"
             >
-              <h2 className="text-2xl font-bold text-landal-green text-center mb-6">🎯 Activiteiten in de Omgeving</h2>
+              <h2 className="text-2xl font-bold text-landal-green text-center mb-6">🎯 Activiteiten & Uitjes</h2>
 
               <p className="text-landal-gray text-center mb-6">
-                Naast alle gezelligheid in de huisjes, is er in de Drentse omgeving genoeg te ontdekken:
+                Van wellness op het park tot avonturen in de prachtige Drentse natuur:
               </p>
 
               <div className="space-y-6">
-                {/* Natuurliefhebbers */}
+                {/* Op het Park */}
                 <div className="landal-card p-6 shadow-card">
                   <h3 className="text-xl font-bold text-landal-green mb-4 flex items-center gap-2">
-                    <TreePine className="w-5 h-5 flex-shrink-0" />
-                    <span>Voor de Natuurliefhebbers</span>
+                    <span className="text-2xl">🏕️</span>
+                    <span>Op Landal PUUR Exloo</span>
                   </h3>
 
                   <div className="space-y-4">
-                    {/* Activity cards with Landal styling */}
                     {[
                       {
-                        name: "De Hondsrug",
-                        description:
-                          "We zitten midden in het UNESCO Geopark de Hondsrug. Direct vanuit het park starten prachtige wandel- en fietsroutes door bos en over heide.",
-                        distance: "Direct om de hoek",
+                        name: "Wellness & Sauna",
+                        description: "Ontspan in jullie privé Finse sauna of neem een duik in het verwarmde zwembad.",
+                        distance: "In jullie huisje",
+                        cost: "Gratis",
                       },
                       {
-                        name: "Boomkroonpad",
-                        description: "Een unieke wandeling door de toppen van de bomen. Een avontuur voor jong en oud!",
-                        distance: "ca. 20 min rijden",
-                        link: "https://www.staatsbosbeheer.nl/boomkroonpad",
+                        name: "Tennisbaan",
+                        description: "Een potje tennis op de park tennisbaan. Rackets zijn te huur bij de receptie.",
+                        distance: "Op het park",
+                        cost: "€10 per uur",
+                      },
+                      {
+                        name: "Minigolf",
+                        description: "Leuke 18-holes minigolfbaan voor jong en oud. Perfecte familie activiteit!",
+                        distance: "Op het park", 
+                        cost: "€5 pp",
+                      },
+                      {
+                        name: "Speeltuin & Sportveld",
+                        description: "Grote speeltuin voor de kids en open veld voor voetbal, frisbee of andere spellen.",
+                        distance: "Op het park",
+                        cost: "Gratis",
                       },
                     ].map((activity) => (
                       <div key={activity.name} className="bg-landal-light rounded-lg p-4 border border-landal-border">
-                        <div className="flex flex-col mb-3 gap-2">
-                          <div>
-                            <h4 className="text-base font-semibold text-landal-green mb-2">{activity.name}</h4>
-                            <p className="text-sm text-gray-700 mb-2">{activity.description}</p>
-                            <p className="text-xs text-landal-gray">
-                              <strong>Afstand:</strong> {activity.distance}
-                            </p>
-                            {activity.link && (
-                              <a
-                                href={activity.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-landal-light-green hover:text-landal-green underline text-xs break-all mt-1 block"
-                              >
-                                🔗 {activity.link.replace("https://", "")}
-                              </a>
-                            )}
-                          </div>
-                          <div className="flex justify-between items-center mt-2">
-                            <span className="bg-landal-green text-white px-3 py-1 rounded-full text-sm font-semibold">
-                              {polls.activity[activity.name]?.count || 0} stemmen
-                            </span>
-
-                            {showPollNameInput === `activity-${activity.name}` ? (
-                              <button onClick={() => setShowPollNameInput(null)} className="text-landal-gray text-sm">
-                                Annuleren
-                              </button>
-                            ) : (
-                              <button
-                                onClick={() => handlePollVote("activity", activity.name)}
-                                className="text-landal-green font-medium text-sm"
-                              >
-                                Stem
-                              </button>
-                            )}
-                          </div>
+                        <h4 className="text-base font-semibold text-landal-green mb-2">{activity.name}</h4>
+                        <p className="text-sm text-gray-700 mb-2">{activity.description}</p>
+                        <div className="flex justify-between items-center text-xs text-landal-gray">
+                          <span><strong>Locatie:</strong> {activity.distance}</span>
+                          <span><strong>Kosten:</strong> {activity.cost}</span>
                         </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-                        {polls.activity[activity.name]?.voters && polls.activity[activity.name].voters.length > 0 && (
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            {polls.activity[activity.name].voters.map((voter, index) => (
-                              <span
-                                key={index}
-                                className="bg-white text-landal-green px-2 py-1 rounded text-xs flex items-center gap-1 border border-landal-border"
-                              >
-                                {voter}
-                                <button
-                                  onClick={() => handlePollUnsubscribe("activity", activity.name, voter)}
-                                  className="text-landal-gray hover:text-landal-green ml-1 text-xs"
-                                  title="Afmelden"
-                                >
-                                  ✕
-                                </button>
-                              </span>
-                            ))}
-                          </div>
-                        )}
+                {/* Natuur & Outdoor */}
+                <div className="landal-card p-6 shadow-card">
+                  <h3 className="text-xl font-bold text-landal-green mb-4 flex items-center gap-2">
+                    <TreePine className="w-5 h-5 flex-shrink-0" />
+                    <span>Natuur & Outdoor</span>
+                  </h3>
 
-                        {showPollNameInput === `activity-${activity.name}` && (
-                          <div className="flex flex-col gap-2 mt-3">
-                            <input
-                              type="text"
-                              value={pollNameInput}
-                              onChange={(e) => setPollNameInput(e.target.value)}
-                              placeholder="Je naam..."
-                              className="w-full px-3 py-2 text-sm bg-white border border-landal-border rounded-lg text-gray-800 placeholder-landal-gray focus:ring-2 focus:ring-landal-green focus:border-transparent"
-                              onKeyPress={(e) => e.key === "Enter" && handlePollNameSubmit("activity", activity.name)}
-                              autoFocus
-                            />
-                            <button
-                              onClick={() => handlePollNameSubmit("activity", activity.name)}
-                              className="landal-button text-sm py-2"
-                            >
-                              Stem voor {activity.name}
-                            </button>
-                          </div>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        name: "Boomkroonpad Drouwen",
+                        description: "Unieke wandeling door de toppen van de bomen. 125m lang pad op 22m hoogte!",
+                        distance: "20 min rijden",
+                        cost: "€12,50 volw. / €8,50 kind",
+                        link: "https://www.staatsbosbeheer.nl/boomkroonpad",
+                      },
+                      {
+                        name: "De Hondsrug Wandeling",
+                        description: "UNESCO Geopark wandelroutes direct vanuit het park. Prachtige natuur!",
+                        distance: "Direct om de hoek",
+                        cost: "Gratis",
+                      },
+                      {
+                        name: "Kanoën op de Hunze",
+                        description: "Ontdek Drenthe vanaf het water. Rustige tocht door natuurgebieden.",
+                        distance: "15 min rijden",
+                        cost: "€25 pp (3 uur)",
+                        link: "https://www.kanoverhuurhunze.nl",
+                      },
+                      {
+                        name: "Hunebed Wandelroute",
+                        description: "Bezoek de mysterieuze hunebedden rondom Exloo. Fiets- en wandelroutes.",
+                        distance: "5-15 min rijden",
+                        cost: "Gratis",
+                      },
+                    ].map((activity) => (
+                      <div key={activity.name} className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                        <h4 className="text-base font-semibold text-landal-green mb-2">{activity.name}</h4>
+                        <p className="text-sm text-gray-700 mb-2">{activity.description}</p>
+                        <div className="flex justify-between items-center text-xs text-landal-gray mb-2">
+                          <span><strong>Afstand:</strong> {activity.distance}</span>
+                          <span><strong>Kosten:</strong> {activity.cost}</span>
+                        </div>
+                        {activity.link && (
+                          <a
+                            href={activity.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-landal-light-green hover:text-landal-green underline text-xs"
+                          >
+                            🔗 Website
+                          </a>
                         )}
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <p className="text-center text-landal-gray mt-6 text-sm">
-                  We kunnen ter plekke kijken waar we zin in hebben. Geen verplichtingen, alles mag. ✨
+                {/* Familie Uitjes */}
+                <div className="landal-card p-6 shadow-card">
+                  <h3 className="text-xl font-bold text-landal-green mb-4 flex items-center gap-2">
+                    <span className="text-2xl">🎠</span>
+                    <span>Familie Uitjes</span>
+                  </h3>
+
+                  <div className="space-y-4">
+                    {[
+                      {
+                        name: "WILDLANDS Adventure Zoo",
+                        description: "Wereldreis door jungle, savanne en poolgebied. Een van de mooiste dierentuinen!",
+                        distance: "20 min rijden naar Emmen",
+                        cost: "€28 volw. / €25 kind",
+                        link: "https://www.wildlands.nl",
+                      },
+                      {
+                        name: "Klimpark Joytime",
+                        description: "Uitdagend klim- en klauterparadijs in de bossen. Voor echte avonturiers!",
+                        distance: "20 min rijden naar Grolloo",
+                        cost: "€19 pp (3 uur)",
+                        link: "https://www.joytime.nl",
+                      },
+                      {
+                        name: "Attractiepark Slagharen",
+                        description: "Thrill rides en family fun in Wild West sfeer. Perfect voor een dagje uit!",
+                        distance: "45 min rijden",
+                        cost: "€32 pp",
+                        link: "https://www.slagharen.com",
+                      },
+                      {
+                        name: "Speelstad Oranje",
+                        description: "Indoor speelparadijs voor als het regent. Ook leuk voor volwassenen!",
+                        distance: "15 min rijden naar Oranje",
+                        cost: "€8,50 pp",
+                      },
+                    ].map((activity) => (
+                      <div key={activity.name} className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                        <h4 className="text-base font-semibold text-landal-green mb-2">{activity.name}</h4>
+                        <p className="text-sm text-gray-700 mb-2">{activity.description}</p>
+                        <div className="flex justify-between items-center text-xs text-landal-gray mb-2">
+                          <span><strong>Afstand:</strong> {activity.distance}</span>
+                          <span><strong>Kosten:</strong> {activity.cost}</span>
+                        </div>
+                        {activity.link && (
+                          <a
+                            href={activity.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-landal-light-green hover:text-landal-green underline text-xs"
+                          >
+                            🔗 Website
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Cultuur & Historie */}
+                <div className="landal-card p-6 shadow-card">
+                  <h3 className="text-xl font-bold text-landal-green mb-4 flex items-center gap-2">
+                    <span className="text-2xl">🏛️</span>
+                    <span>Cultuur & Historie</span>
+                  </h3>
+
+                  <div className="space-y-4">
+                    {[
+                      {
+                        name: "Hunebedcentrum Borger",
+                        description: "Het grootste hunebed van Nederland + informatiecentrum. Duik in de prehistorie!",
+                        distance: "10 min rijden",
+                        cost: "€8 volw. / €6 kind",
+                        link: "https://www.hunebedcentrum.nl",
+                      },
+                      {
+                        name: "Museumdorp Orvelte",
+                        description: "Levend musemdorp met ambachten en gezellige horeca. Terug in de tijd!",
+                        distance: "25 min rijden",
+                        cost: "€5 pp",
+                        link: "https://www.orvelte.nl",
+                      },
+                      {
+                        name: "Drents Museum Assen",
+                        description: "Prachtige collecties over Drentse geschiedenis en wereldculturen.",
+                        distance: "30 min rijden",
+                        cost: "€15 pp",
+                        link: "https://www.drentsmuseum.nl",
+                      },
+                      {
+                        name: "Veenpark Barger-Compascuum",
+                        description: "Ontdek het verhaal van de veenarbeiders. Historisch park met rondrit.",
+                        distance: "35 min rijden",
+                        cost: "€16 volw. / €12 kind",
+                        link: "https://www.veenpark.nl",
+                      },
+                    ].map((activity) => (
+                      <div key={activity.name} className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                        <h4 className="text-base font-semibold text-landal-green mb-2">{activity.name}</h4>
+                        <p className="text-sm text-gray-700 mb-2">{activity.description}</p>
+                        <div className="flex justify-between items-center text-xs text-landal-gray mb-2">
+                          <span><strong>Afstand:</strong> {activity.distance}</span>
+                          <span><strong>Kosten:</strong> {activity.cost}</span>
+                        </div>
+                        {activity.link && (
+                          <a
+                            href={activity.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-landal-light-green hover:text-landal-green underline text-xs"
+                          >
+                            🔗 Website
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Gezelligheid */}
+                <div className="landal-card p-6 shadow-card">
+                  <h3 className="text-xl font-bold text-landal-green mb-4 flex items-center gap-2">
+                    <span className="text-2xl">🍻</span>
+                    <span>Gezelligheid & Horeca</span>
+                  </h3>
+
+                  <div className="space-y-4">
+                    {[
+                      {
+                        name: "Restaurant Park Exloo",
+                        description: "Lekker uit eten op het park zelf. Nederlandse keuken en internationale gerechten.",
+                        distance: "Op het park",
+                        cost: "€15-25 hoofdgerecht",
+                      },
+                      {
+                        name: "Pannenkoekenhuis Borger",
+                        description: "Traditionele Nederlandse pannenkoeken in gezellige sfeer.",
+                        distance: "10 min rijden",
+                        cost: "€8-12 pp",
+                      },
+                      {
+                        name: "Brouwerij de Kikker",
+                        description: "Lokale brouwerij met proeverij en rondleiding. Drentse biertjes!",
+                        distance: "25 min rijden naar Odoorn",
+                        cost: "€12,50 proeverij",
+                        link: "https://www.brouwerijdekikker.nl",
+                      },
+                      {
+                        name: "Café Restaurant De Zeven Geitjes",
+                        description: "Gezellig dorpscafé met lokale specialiteiten en goede sfeer.",
+                        distance: "5 min rijden naar Exloo",
+                        cost: "€12-18 hoofdgerecht",
+                      },
+                    ].map((activity) => (
+                      <div key={activity.name} className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                        <h4 className="text-base font-semibold text-landal-green mb-2">{activity.name}</h4>
+                        <p className="text-sm text-gray-700 mb-2">{activity.description}</p>
+                        <div className="flex justify-between items-center text-xs text-landal-gray mb-2">
+                          <span><strong>Afstand:</strong> {activity.distance}</span>
+                          <span><strong>Kosten:</strong> {activity.cost}</span>
+                        </div>
+                        {activity.link && (
+                          <a
+                            href={activity.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-landal-light-green hover:text-landal-green underline text-xs"
+                          >
+                            🔗 Website
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <p className="text-center text-landal-gray mt-6 text-sm font-medium">
+                  Keuze genoeg! We kijken ter plekke waar we zin in hebben. Geen verplichtingen, alles mag! ✨
                 </p>
               </div>
             </motion.div>
