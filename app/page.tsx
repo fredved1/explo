@@ -688,7 +688,7 @@ export default function LandalFamilieweekendApp() {
                         </div>
                         <div className="flex items-center justify-between bg-white rounded p-2 border border-landal-border">
                           <span className="text-gray-800 text-sm">Thomas & Jasmin</span>
-                          <span className="text-xs text-landal-gray">👶 Freddy Lewis</span>
+                          <span className="text-xs text-landal-gray">👶 Freddie Lewis</span>
                         </div>
                         <div className="flex items-center justify-between bg-white rounded p-2 border border-landal-border">
                           <span className="text-gray-800 text-sm">Gideon & Loes</span>
