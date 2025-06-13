@@ -1,36 +1,26 @@
 export async function fetchData() {
   try {
-    // First try localStorage for immediate response
-    const saved = localStorage.getItem("familieweekend-data")
-    let localData = saved ? JSON.parse(saved) : { teams: {}, polls: {} }
-    
-    // Then try to fetch from API and merge
+    // Fetch from database first
     const response = await fetch("/api/data", {
       cache: "no-store",
     })
     
     if (response.ok) {
       const serverData = await response.json()
-      // Merge server data with local data, preferring local for recent changes
-      const mergedData = {
-        teams: { ...serverData.teams, ...localData.teams },
-        polls: { ...serverData.polls, ...localData.polls }
-      }
-      // Update localStorage with merged data
-      localStorage.setItem("familieweekend-data", JSON.stringify(mergedData))
-      return mergedData
+      // Save to localStorage as backup
+      localStorage.setItem("familieweekend-data", JSON.stringify(serverData))
+      return serverData
     } else {
       console.warn("API not available, using localStorage")
-      return localData
+      // Fallback to localStorage if API fails
+      const saved = localStorage.getItem("familieweekend-data")
+      return saved ? JSON.parse(saved) : { teams: {}, polls: {} }
     }
   } catch (error) {
     console.error("Error fetching data:", error)
     // Fallback to localStorage if API fails
     const saved = localStorage.getItem("familieweekend-data")
-    if (saved) {
-      return JSON.parse(saved)
-    }
-    return { teams: {}, polls: {} }
+    return saved ? JSON.parse(saved) : { teams: {}, polls: {} }
   }
 }
 
