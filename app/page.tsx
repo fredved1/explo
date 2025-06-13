@@ -767,8 +767,8 @@ export default function LandalFamilieweekendApp() {
                     id: "breakfast",
                     name: "Team Ochtendgloren",
                     icon: "☀️",
-                    desc: "Ontbijt + Lunch zaterdag",
-                    details: "Zorgt voor ontbijt (zat + zon) én lunch op zaterdag. Brood, croissants, beleg, eieren, yoghurt, sapjes en een lekkere lunch.",
+                    desc: "Ontbijt (zat + zon)",
+                    details: "Zorgt voor brood, croissants, beleg, eieren, yoghurt en sapjes voor zaterdag en zondag.",
                   },
                   {
                     id: "saturday",
@@ -781,8 +781,8 @@ export default function LandalFamilieweekendApp() {
                     id: "lunch",
                     name: "Team Zondaglunch",
                     icon: "🥪",
-                    desc: "Zondag lunch",
-                    details: "Verzorgt een lekkere lunch voor zondag, iets hartigs en voedzaams.",
+                    desc: "Lunch (zat + zon)",
+                    details: "Verzorgt lekkere lunches voor zaterdag én zondag. Iets hartigs en voedzaams voor beide dagen.",
                   },
                   {
                     id: "drinks",
