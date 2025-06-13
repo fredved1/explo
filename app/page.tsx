@@ -120,8 +120,8 @@ export default function LandalFamilieweekendApp() {
     
     loadData()
     
-    // Refresh data every 10 seconds to see updates from other users (increased from 5 seconds)
-    const interval = setInterval(loadData, 10000)
+    // Refresh data every 30 seconds to see updates from other users (reduced frequency to prevent data loss)
+    const interval = setInterval(loadData, 30000)
     return () => clearInterval(interval)
   }, [])
 
