@@ -11,8 +11,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Familieweekend Exloo 2025 | Landal PUUR Exloo",
-  description: "Join us voor een onvergetelijk familieweekend in de bossen van Drenthe! 20-23 Juni 2025",
+  title: "Familieweekend Exloo 2025 | Veddertjes & Antonisse",
+  description: "🌳 Het is bijna zover! Een onvergetelijk weekend samen in de Drentse bossen. Welness villa's, activiteiten en familietijd van 20-23 juni 2025.",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
   manifest: "/manifest.json",
   themeColor: "#00573c",
@@ -21,7 +21,29 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent",
     title: "Familieweekend Exloo",
   },
-    generator: 'v0.dev'
+  openGraph: {
+    title: "Familieweekend Exloo 2025 🌳",
+    description: "Het is bijna zover! Een onvergetelijk weekend samen in de Drentse bossen. Wellness villa's, activiteiten en familietijd ✨",
+    type: "website",
+    url: "https://familieweekend-exloo.vercel.app",
+    siteName: "Familieweekend Exloo",
+    images: [
+      {
+        url: "/family-photo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Veddertjes & Antonisse Familieweekend Exloo 2025",
+      },
+    ],
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Familieweekend Exloo 2025 🌳",
+    description: "Het is bijna zover! Een onvergetelijk weekend samen in de Drentse bossen. Wellness villa's, activiteiten en familietijd ✨",
+    images: ["/family-photo.jpg"],
+  },
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
