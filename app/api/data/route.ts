@@ -1,9 +1,9 @@
 import { Redis } from "@upstash/redis"
 import { NextResponse } from "next/server"
 
-// Create Redis client with exact credentials
+// Create Redis client with correct URL and token
 const redis = new Redis({
-  url: "https://upstash-redis-aadfaaijcde2ngmwntzhawyzzjy0zmq4owqzymvhmdy3mdkwndezmxaxma.upstash.io",
+  url: "https://uncommon-dodo-42847.upstash.io",
   token: "AadfAAIjcDE2NGMwNTZhYWYzZjY0ZmQ4OWQzYmVhMDY3MDkwNDUxM3AxMA"
 })
 
