@@ -229,25 +229,6 @@ export default function LandalFamilieweekendApp() {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
-  const resetAllData = () => {
-    localStorage.removeItem("familieweekend-data")
-    setSelectedTeams({})
-    setPolls({
-      bbq: {
-        "Ik neem de BBQ mee!": { count: 0, voters: [] },
-        "Iemand anders mag": { count: 0, voters: [] },
-      },
-      activity: {
-        Wildlands: { count: 0, voters: [] },
-        Boomkroonpad: { count: 0, voters: [] },
-        Hunebedden: { count: 0, voters: [] },
-        "Gewoon chillen": { count: 0, voters: [] },
-        "Klimpark Joytime": { count: 0, voters: [] },
-        "Museumdorp Orvelte": { count: 0, voters: [] },
-        "De Hondsrug": { count: 0, voters: [] },
-      },
-    })
-  }
 
   const tabs = [
     { id: "home", label: "Home", icon: Sparkles },
@@ -1333,16 +1314,6 @@ export default function LandalFamilieweekendApp() {
         </div>
       </nav>
 
-      {/* Hidden Admin Reset Button */}
-      <div className="fixed bottom-24 right-4 opacity-30">
-        <button
-          onClick={resetAllData}
-          className="bg-landal-light text-landal-gray p-2 rounded-full text-xs"
-          title="Reset alle data (alleen voor admin)"
-        >
-          Reset
-        </button>
-      </div>
     </div>
   )
 }
