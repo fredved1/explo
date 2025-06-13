@@ -411,10 +411,12 @@ export default function LandalFamilieweekendApp() {
 
                   <p>
                     Het is een tijdlijn van groei. We zagen Thirza en Daantje veranderen van kleine dreumesen in stoere kids 
-                    die ons van de skipistes af blazen. We zagen hoe iedereen zijn eigen pad vond: Gideon die de wet ging 
-                    handhaven (en ons uitnodigde voor padeltoernooien met 'meesterlijke balletjes'), Charlotte die besloot 
-                    dat skydiven nog niet eng genoeg was en de boksring in stapte, en Daph die de IKEA-gehaktballetjes 
-                    vaarwel zei om jurist te worden.
+                    die ons van de skipistes af blazen. We zagen onze kring groter worden met de komst van Rick, die 
+                    moeiteloos werd opgenomen in onze gezellige chaos. We zagen hoe iedereen zijn eigen pad vond: Gideon 
+                    die de wet ging handhaven (en ons uitnodigde voor padeltoernooien met 'meesterlijke balletjes'), 
+                    Charlotte die besloot dat skydiven nog niet eng genoeg was en de boksring in stapte, en Daph die de 
+                    IKEA-gehaktballetjes vaarwel zei om jurist te worden. We zagen Jassie uitgroeien tot onze creatieve 
+                    duizendpoot, altijd met een camera in de hand of een briljant idee voor een dobbelspel.
                   </p>
 
                   <p>
@@ -427,18 +429,18 @@ export default function LandalFamilieweekendApp() {
 
                   <p>
                     Onze avonturen reikten verder dan Hengelo en Amsterdam. We creëerden herinneringen onder de Griekse 
-                    zon op Rhodos (of was het Samos, Bellie?), waar we zagen hoe Peter een God op ski's ook een God op 
+                    zon op Rhodos (of was het Samos, Bellie?), waar we zagen hoe Peter, een God op ski's, ook een God op 
                     het strand kan zijn. We zagen Isabelle de wereld over reizen, van de bergen in Nepal tot de outback 
                     van Australië, maar altijd weer terugkeren voor een borrel, een feestje of een rondje op de 
                     Amsterdamse grachten.
                   </p>
 
                   <p>
-                    En dan de liefde. Die groeide en bloeide. We zagen Loes en Gideon hun lieve Philippe verwelkomen, 
+                    En dan de liefde. Die groeide en bloeide. We zagen hoe Loes en Gideon hun lieve Philippe verwelkomden, 
                     en recenter mochten we Freddie Lewis in onze armen sluiten. Momenten van puur geluk. Maar de app 
                     was er ook in tijden van spanning en onzekerheid. Juist op die momenten, zoals de afgelopen tijd 
                     rondom de gezondheid van Peter, zagen we wat deze groep echt betekent: een onvoorwaardelijke muur 
-                    van steun, liefde en saamhorigheid.
+                    van steun, liefde en saamhorigheid, met Heleen als het warme, zorgzame hart van de familie.
                   </p>
 
                   <p>
@@ -469,7 +471,7 @@ export default function LandalFamilieweekendApp() {
 
                   <p className="text-right text-landal-gray text-sm mt-4">
                     Liefs,<br />
-                    Thomas & Jassie
+                    De Veddertjes & Antonisses
                   </p>
                 </div>
               </div>
@@ -749,18 +751,18 @@ export default function LandalFamilieweekendApp() {
               <div className="space-y-4">
                 {[
                   {
-                    id: "breakfast",
-                    name: "Team Ochtendgloren",
-                    icon: "☀️",
-                    desc: "Ontbijt & Lunch (zat + zon)",
-                    details: "Zorgt voor brood, croissants, beleg, eieren, yoghurt en sapjes voor zaterdag en zondag.",
-                  },
-                  {
                     id: "friday",
                     name: "Team Vrijdagavond",
                     icon: "🌅",
                     desc: "Vrijdag diner",
                     details: "Welkomstdiner voor de aankomstdag. Iets makkelijks en gezelligs!",
+                  },
+                  {
+                    id: "breakfast",
+                    name: "Team Ochtendgloren",
+                    icon: "☀️",
+                    desc: "Ontbijt (zat + zon)",
+                    details: "Zorgt voor brood, croissants, beleg, eieren, yoghurt en sapjes voor zaterdag en zondag.",
                   },
                   {
                     id: "saturday",
