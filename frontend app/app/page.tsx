@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Calendar, Users, Utensils, Home, ChevronDown, TreePine, Camera, Menu, X, MapPin, Coffee, Sparkles, PartyPopper } from "lucide-react"
+import { Calendar, Users, Utensils, Home, ChevronDown, TreePine, Camera, Menu, X } from "lucide-react"
 import confetti from "canvas-confetti"
-import { fetchData, saveData as saveDataToKV } from "@/lib/api"
 
 export default function LandalFamilieweekendApp() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
@@ -65,8 +64,9 @@ export default function LandalFamilieweekendApp() {
   }, [])
 
   useEffect(() => {
-    const loadData = async () => {
-      const data = await fetchData()
+    const saved = localStorage.getItem("familieweekend-data")
+    if (saved) {
+      const data = JSON.parse(saved)
 
       // Migrate old string format to array format
       const teams = data.teams || {}
@@ -92,7 +92,10 @@ export default function LandalFamilieweekendApp() {
           if (typeof value === "number") {
             migratedPolls[pollId][option] = { count: value, voters: [] }
           } else if (value && typeof value === "object" && "count" in value) {
-            migratedPolls[pollId][option] = value
+            // Validate data integrity: count should match voters length
+            const voters = Array.isArray(value.voters) ? value.voters : []
+            const validCount = Math.max(0, voters.length) // Use voter count as source of truth
+            migratedPolls[pollId][option] = { count: validCount, voters }
           } else {
             migratedPolls[pollId][option] = { count: 0, voters: [] }
           }
@@ -113,23 +116,19 @@ export default function LandalFamilieweekendApp() {
                 Hunebedden: { count: 0, voters: [] },
                 "Gewoon chillen": { count: 0, voters: [] },
                 "Klimpark Joytime": { count: 0, voters: [] },
+                "Museumdorp Orvelte": { count: 0, voters: [] },
+                "De Hondsrug": { count: 0, voters: [] },
               },
             },
       )
     }
-    
-    loadData()
-    
-    // Refresh data every 5 seconds to see updates from other users
-    const interval = setInterval(loadData, 5000)
-    return () => clearInterval(interval)
   }, [])
 
   const saveData = (
     teams: Record<string, string[]>,
     pollData: Record<string, Record<string, { count: number; voters: string[] }>>,
   ) => {
-    saveDataToKV(teams, pollData)
+    localStorage.setItem("familieweekend-data", JSON.stringify({ teams, polls: pollData }))
   }
 
   const handleTeamSelect = (team: string) => {
@@ -151,7 +150,7 @@ export default function LandalFamilieweekendApp() {
       particleCount: 100,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ["#10b981", "#34d399", "#6ee7b7", "#a7f3d0"],
+      colors: ["#00573c", "#4a8c7a", "#f5a623"],
     })
   }
 
@@ -213,7 +212,7 @@ export default function LandalFamilieweekendApp() {
       particleCount: 200,
       spread: 100,
       origin: { y: 0.4 },
-      colors: ["#10b981", "#34d399", "#6ee7b7", "#a7f3d0", "#065f46"],
+      colors: ["#00573c", "#4a8c7a", "#f5a623"],
     })
   }
 
@@ -244,12 +243,12 @@ export default function LandalFamilieweekendApp() {
   }
 
   const tabs = [
-    { id: "home", label: "Home", icon: Sparkles },
-    { id: "verhaal", label: "Ons Verhaal", icon: Users },
-    { id: "details", label: "Details", icon: Calendar },
+    { id: "home", label: "Home", icon: Home },
+    { id: "verhaal", label: "Verhaal", icon: Users },
+    { id: "details", label: "Info", icon: Calendar },
     { id: "teams", label: "Teams", icon: Utensils },
     { id: "activiteiten", label: "Activiteiten", icon: TreePine },
-    { id: "polls", label: "Polls", icon: PartyPopper },
+    { id: "memories", label: "Foto's", icon: Camera },
   ]
 
   return (
@@ -403,45 +402,26 @@ export default function LandalFamilieweekendApp() {
                   <p className="font-medium text-landal-green">Lieve Veddertjes & Antonisses,</p>
 
                   <p>
-                    Deze groepsapp, onze digitale huiskamer sinds Loes in 2015 op 'maak groep' drukte, is een tijdcapsule.
-                    Het is het levende bewijs van ons allemaal: een kroniek van bijna tien jaar lief en leed, verpakt in
-                    duizenden appjes.
+                    Deze groepsapp, onze digitale huiskamer sinds Loes in 2015 op 'maak groep' drukte, is een
+                    tijdcapsule. Het is het levende bewijs van ons allemaal: een kroniek van bijna tien jaar lief en
+                    leed, verpakt in duizenden appjes.
                   </p>
 
                   <p>
                     Het is de plek waar we huizen zagen veranderen in droomhuizen (hallo, Ibiza-tuin van Thijs & Daph!),
-                    en waar Charlotte & Daan hun roots herontdekten met een terugkeer naar Hengelo. We zagen carrières een
-                    vlucht nemen: Gideon als agent in Twente, Daph als kersverse jurist die IKEA verliet.
+                    en waar Charlotte & Daan hun roots herontdekten met een terugkeer naar Hengelo. We zagen carrières
+                    een vlucht nemen: Gideon als agent in Twente, Daph als kersverse jurist die IKEA verliet.
                   </p>
 
                   <p>
                     We hebben de wereld rondgereisd: van wintersport in Oostenrijk en onze gezamenlijke avonturen in Sri
-                    Lanka tot de onvergetelijke familietrip naar Rhodos – waar Isabelle, onze wereldreiziger, dacht dat we
-                    op Samos zaten en Rick naadloos in de chaos werd opgenomen.
+                    Lanka tot de onvergetelijke familietrip naar Rhodos – waar Isabelle, onze wereldreiziger, dacht dat
+                    we op Samos zaten en Rick naadloos in de chaos werd opgenomen.
                   </p>
 
                   <p>
-                    We zagen de volgende generatie arriveren: Thirza & Daantje die opgroeien van dreumes tot stoere kids,
-                    en de komst van onze nieuwste neefjes, de lieve Philippe en de kersverse Freddie Lewis.
-                  </p>
-
-                  <p>
-                    We hebben avonturen beleefd die we nooit vergeten: Charlotte die de zwaartekracht uitdaagde met een
-                    skydive en nu de boksring in stapt, de heldhaftige Mudmasters-run, en de legendarische Gaypride op de
-                    boot van neef Jaap.
-                  </p>
-
-                  <p>
-                    En we hebben samen de adem ingehouden, geduimd en gehoopt in spannende tijden. Gezien hoe sterk de
-                    basis is als het er echt op aankomt. Peter, jouw reis de laatste tijd is daar het krachtigste bewijs
-                    van, met Heleen, het warme hart van de familie, rotsvast aan je zijde.
-                  </p>
-
-                  <p>
-                    Deze app is het bewijs van wie we zijn: een familie die deelt. Van de AI-serenades van Thomas en de{" "}
-                    <em>White Lotus</em>-aftermovies van Daan tot de steun van Jassie, ons emotionele kompas. Van de
-                    eindeloze discussies over wie-wat-betaalt-voor-kerst tot het onopgeloste mysterie van de indoor
-                    wondertol.
+                    We zagen de volgende generatie arriveren: Thirza & Daantje die opgroeien van dreumes tot stoere
+                    kids, en de komst van onze nieuwste neefjes, de lieve Philippe en de kersverse Freddie Lewis.
                   </p>
 
                   <p className="font-semibold text-landal-green">
@@ -668,86 +648,40 @@ export default function LandalFamilieweekendApp() {
             </motion.div>
           )}
 
-          {activeTab === "polls" && (
+          {activeTab === "memories" && (
             <motion.div
-              key="polls"
+              key="memories"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="px-4 py-4"
             >
-              <h2 className="text-2xl font-bold text-landal-green text-center mb-6">Polls</h2>
+              <h2 className="text-2xl font-bold text-landal-green text-center mb-6">📸 Onze Herinneringen</h2>
 
-              <div className="space-y-6">
-                {/* BBQ Poll */}
-                <div className="landal-card p-6 shadow-card">
-                  <h3 className="text-xl font-bold text-landal-green mb-4">🔥 Wie neemt de elektrische BBQ mee?</h3>
-                  <div className="space-y-4">
-                    {Object.entries(polls.bbq).map(([option, data]) => (
-                      <div key={option} className="bg-landal-light rounded-lg p-4 border border-landal-border">
-                        <div className="flex justify-between items-center mb-3">
-                          <span className="text-gray-800 font-semibold">{option}</span>
-                          <span className="bg-landal-green text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            {data.count}
-                          </span>
-                        </div>
+              <div className="landal-card p-6 shadow-card">
+                <h3 className="text-xl font-bold text-landal-green mb-6 flex items-center justify-center gap-2">
+                  <Camera className="w-6 h-6" />
+                  Onze Mooie Herinneringen
+                </h3>
 
-                        {data.voters && data.voters.length > 0 && (
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            {data.voters.map((voter, index) => (
-                              <span
-                                key={index}
-                                className="bg-white text-landal-green px-2 py-1 rounded text-xs flex items-center gap-1 border border-landal-border"
-                              >
-                                {voter}
-                                <button
-                                  onClick={() => handlePollUnsubscribe("bbq", option, voter)}
-                                  className="text-landal-gray hover:text-landal-green ml-1 text-xs"
-                                  title="Afmelden"
-                                >
-                                  ✕
-                                </button>
-                              </span>
-                            ))}
-                          </div>
-                        )}
-
-                        {showPollNameInput === `bbq-${option}` ? (
-                          <div className="flex flex-col gap-2">
-                            <input
-                              type="text"
-                              value={pollNameInput}
-                              onChange={(e) => setPollNameInput(e.target.value)}
-                              placeholder="Je naam..."
-                              className="w-full px-3 py-2 bg-white border border-landal-border rounded-lg text-gray-800 placeholder-landal-gray focus:ring-2 focus:ring-landal-green focus:border-transparent"
-                              onKeyPress={(e) => e.key === "Enter" && handlePollNameSubmit("bbq", option)}
-                              autoFocus
-                            />
-                            <button
-                              onClick={() => handlePollNameSubmit("bbq", option)}
-                              className="landal-button text-sm py-2"
-                            >
-                              Stemmen
-                            </button>
-                            <button
-                              onClick={() => setShowPollNameInput(null)}
-                              className="landal-button-secondary text-sm py-2"
-                            >
-                              Annuleren
-                            </button>
-                          </div>
-                        ) : (
-                          <button
-                            onClick={() => handlePollVote("bbq", option)}
-                            className="landal-button w-full text-sm py-2"
-                          >
-                            Stem op deze optie
-                          </button>
-                        )}
+                <div className="grid grid-cols-2 gap-4">
+                  {/* Placeholder memory cards */}
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="bg-landal-light rounded-lg overflow-hidden border border-landal-border">
+                      <div className="aspect-square bg-gray-200 flex items-center justify-center">
+                        <Camera className="w-8 h-8 text-landal-gray" />
                       </div>
-                    ))}
-                  </div>
+                      <div className="p-3">
+                        <h4 className="font-semibold text-landal-green text-sm mb-1">Familieherinnering {i}</h4>
+                        <p className="text-xs text-landal-gray">Binnenkort gevuld met mooie momenten.</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
+
+                <p className="text-center text-landal-gray text-sm mt-6">
+                  Van kerstdiners tot zomervakanties - elke foto vertelt ons verhaal 💕
+                </p>
               </div>
             </motion.div>
           )}
