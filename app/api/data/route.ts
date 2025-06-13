@@ -4,7 +4,7 @@ import { NextResponse } from "next/server"
 let redis: Redis | null = null
 
 try {
-  // Use the Redis credentials directly
+  // Use the Redis credentials from Upstash dashboard
   const url = "https://upstash-redis-aadfaaijcde2ngmwntzhawyzzjy0zmq4owqzymvhmdy3mdkwndezmxaxma.upstash.io"
   const token = "AadfAAIjcDE2NGMwNTZhYWYzZjY0ZmQ4OWQzYmVhMDY3MDkwNDUxM3AxMA"
   
