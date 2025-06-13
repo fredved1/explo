@@ -1,17 +1,12 @@
 import { Redis } from "@upstash/redis"
 import { NextResponse } from "next/server"
 
-// Debug environment variables
-console.log("Environment variables check:")
-console.log("KV_URL exists:", !!process.env.KV_URL)
-console.log("REDIS_URL exists:", !!process.env.REDIS_URL)
-console.log("KV_REST_API_TOKEN exists:", !!process.env.KV_REST_API_TOKEN)
-
 let redis: Redis | null = null
 
 try {
-  const url = process.env.KV_URL || process.env.REDIS_URL
-  const token = process.env.KV_REST_API_TOKEN
+  // Use the Redis credentials directly
+  const url = "https://upstash-redis-aadfaaijcde2ngmwntzhawyzzjy0zmq4owqzymvhmdy3mdkwndezmxaxma.upstash.io"
+  const token = "AadfAAIjcDE2NGMwNTZhYWYzZjY0ZmQ4OWQzYmVhMDY3MDkwNDUxM3AxMA"
   
   if (url && token) {
     redis = new Redis({ url, token })
