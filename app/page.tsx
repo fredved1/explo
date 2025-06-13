@@ -403,55 +403,73 @@ export default function LandalFamilieweekendApp() {
                   <p className="font-medium text-landal-green">Lieve Veddertjes & Antonisses,</p>
 
                   <p>
-                    Deze groepsapp, onze digitale huiskamer sinds Loes in 2015 op 'maak groep' drukte, is een tijdcapsule.
-                    Het is het levende bewijs van ons allemaal: een kroniek van bijna tien jaar lief en leed, verpakt in
-                    duizenden appjes.
+                    Als je door de duizenden berichten, foto's en stickers van onze familie-app scrollt, scroll je eigenlijk 
+                    door de afgelopen tien jaar van ons leven. Het begon in 2015, een simpel digitaal groepje. Nu is het een 
+                    archief van ons leven samen; een digitaal kampvuur waar we alles delen, van het alledaagse tot de momenten 
+                    die een leven tekenen.
                   </p>
 
                   <p>
-                    Het is de plek waar we huizen zagen veranderen in droomhuizen (hallo, Ibiza-tuin van Thijs & Daph!),
-                    en waar Charlotte & Daan hun roots herontdekten met een terugkeer naar Hengelo. We zagen carrières een
-                    vlucht nemen: Gideon als agent in Twente, Daph als kersverse jurist die IKEA verliet.
+                    Het is een tijdlijn van groei. We zagen Thirza en Daantje veranderen van kleine dreumesen in stoere kids 
+                    die ons van de skipistes af blazen. We zagen hoe iedereen zijn eigen pad vond: Gideon die de wet ging 
+                    handhaven (en ons uitnodigde voor padeltoernooien met 'meesterlijke balletjes'), Charlotte die besloot 
+                    dat skydiven nog niet eng genoeg was en de boksring in stapte, en Daph die de IKEA-gehaktballetjes 
+                    vaarwel zei om jurist te worden.
                   </p>
 
                   <p>
-                    We hebben de wereld rondgereisd: van wintersport in Oostenrijk en onze gezamenlijke avonturen in Sri
-                    Lanka tot de onvergetelijke familietrip naar Rhodos – waar Isabelle, onze wereldreiziger, dacht dat we
-                    op Samos zaten en Rick naadloos in de chaos werd opgenomen.
+                    We hebben huizen gekocht, verbouwd en weer verkocht. Van de klusprojecten van Thijs en Daph tot het 
+                    prachtige nieuwe thuis van Loes en Gideon, en de grote terugkeer van de familie Eenkhoorn naar het 
+                    oude, vertrouwde Hengelo. Onze app werd een stroom van Funda-links, verhuisupdates en interieurtips. 
+                    En tussendoor creëerde 'Fred Vedd' de soundtrack van ons leven, met onvergetelijke hits over halve 
+                    marathons en de rivaliteit tussen Daan en Gideon.
                   </p>
 
                   <p>
-                    We zagen de volgende generatie arriveren: Thirza & Daantje die opgroeien van dreumes tot stoere kids,
-                    en de komst van onze nieuwste neefjes, de lieve Philippe en de kersverse Freddie Lewis.
+                    Onze avonturen reikten verder dan Hengelo en Amsterdam. We creëerden herinneringen onder de Griekse 
+                    zon op Rhodos (of was het Samos, Bellie?), waar we zagen hoe Peter een God op ski's ook een God op 
+                    het strand kan zijn. We zagen Isabelle de wereld over reizen, van de bergen in Nepal tot de outback 
+                    van Australië, maar altijd weer terugkeren voor een borrel, een feestje of een rondje op de 
+                    Amsterdamse grachten.
                   </p>
 
                   <p>
-                    We hebben avonturen beleefd die we nooit vergeten: Charlotte die de zwaartekracht uitdaagde met een
-                    skydive en nu de boksring in stapt, de heldhaftige Mudmasters-run, en de legendarische Gaypride op de
-                    boot van neef Jaap.
+                    En dan de liefde. Die groeide en bloeide. We zagen Loes en Gideon hun lieve Philippe verwelkomen, 
+                    en recenter mochten we Freddie Lewis in onze armen sluiten. Momenten van puur geluk. Maar de app 
+                    was er ook in tijden van spanning en onzekerheid. Juist op die momenten, zoals de afgelopen tijd 
+                    rondom de gezondheid van Peter, zagen we wat deze groep echt betekent: een onvoorwaardelijke muur 
+                    van steun, liefde en saamhorigheid.
                   </p>
 
                   <p>
-                    En we hebben samen de adem ingehouden, geduimd en gehoopt in spannende tijden. Gezien hoe sterk de
-                    basis is als het er echt op aankomt. Peter, jouw reis de laatste tijd is daar het krachtigste bewijs
-                    van, met Heleen, het warme hart van de familie, rotsvast aan je zijde.
-                  </p>
-
-                  <p>
-                    Deze app is het bewijs van wie we zijn: een familie die deelt. Van de AI-serenades van Thomas en de{" "}
-                    <em>White Lotus</em>-aftermovies van Daan tot de steun van Jassie, ons emotionele kompas. Van de
-                    eindeloze discussies over wie-wat-betaalt-voor-kerst tot het onopgeloste mysterie van de indoor
-                    wondertol.
+                    En nu staan we aan de vooravond van een nieuw hoofdstuk. Niet alleen voor ons als familie, maar 
+                    speciaal voor één iemand: Peter. Onze eigen reisleider, de man van de gedetailleerde planningen, 
+                    de rots in de branding en de stille kracht die altijd voor iedereen klaarstaat.
                   </p>
 
                   <p className="font-semibold text-landal-green">
-                    En nu, lieve allemaal, voegen we een nieuw, belangrijk hoofdstuk toe aan dit verhaal. Een weekend
-                    speciaal voor jou, Peter. Om te proosten op een leven vol toewijding in je praktijk en op het
-                    prachtige nieuwe hoofdstuk dat voor je ligt.
+                    Dit weekend in Exloo is meer dan zomaar een uitje. Het is ons gezamenlijke 'dankjewel'. Een cadeau 
+                    om te proosten op alles wat achter hem ligt: een indrukwekkende carrière, een leven vol toewijding. 
+                    En nog belangrijker, om te proosten op alles wat vóór hem ligt: een nieuw begin, vol vrijheid, reizen, 
+                    en hopelijk heel veel tijd met zijn (schoon)kinderen en kleinkinderen.
+                  </p>
+
+                  <p>
+                    Laten we dit weekend die digitale wereld even voor wat het is. Laten we nieuwe herinneringen maken, 
+                    lachen om de oude verhalen, en proosten op de man die dit allemaal mede mogelijk heeft gemaakt.
                   </p>
 
                   <p className="text-lg font-bold text-center mt-6 text-landal-green">
-                    Tijd om de telefoons even weg te leggen en live herinneringen te maken.
+                    Op naar Exloo. Op de familie. En bovenal, op jou, Peter.
+                  </p>
+
+                  <p className="text-center text-landal-light-green font-medium">
+                    We hebben er zin in!
+                  </p>
+
+                  <p className="text-right text-landal-gray text-sm mt-4">
+                    Liefs,<br />
+                    Thomas & Jassie
                   </p>
                 </div>
               </div>
