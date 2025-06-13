@@ -120,8 +120,8 @@ export default function LandalFamilieweekendApp() {
     
     loadData()
     
-    // Refresh data every 5 seconds to see updates from other users
-    const interval = setInterval(loadData, 5000)
+    // Refresh data every 10 seconds to see updates from other users (increased from 5 seconds)
+    const interval = setInterval(loadData, 10000)
     return () => clearInterval(interval)
   }, [])
 
@@ -136,7 +136,7 @@ export default function LandalFamilieweekendApp() {
     setShowNameInput(team)
   }
 
-  const handleNameSubmit = (team: string) => {
+  const handleNameSubmit = async (team: string) => {
     if (!nameInput.trim()) return
 
     const newTeams = {
@@ -144,7 +144,10 @@ export default function LandalFamilieweekendApp() {
       [team]: [...(selectedTeams[team] || []), nameInput.trim()],
     }
     setSelectedTeams(newTeams)
-    saveData(newTeams, polls)
+    
+    // Save immediately and wait for completion
+    await saveData(newTeams, polls)
+    
     setNameInput("")
     setShowNameInput(null)
     confetti({
@@ -159,7 +162,7 @@ export default function LandalFamilieweekendApp() {
     setShowPollNameInput(`${pollId}-${option}`)
   }
 
-  const handlePollNameSubmit = (pollId: string, option: string) => {
+  const handlePollNameSubmit = async (pollId: string, option: string) => {
     if (!pollNameInput.trim()) return
 
     const newPolls = {
@@ -173,7 +176,10 @@ export default function LandalFamilieweekendApp() {
       },
     }
     setPolls(newPolls)
-    saveData(selectedTeams, newPolls)
+    
+    // Save immediately and wait for completion
+    await saveData(selectedTeams, newPolls)
+    
     setPollNameInput("")
     setShowPollNameInput(null)
   }
