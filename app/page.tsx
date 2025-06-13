@@ -524,15 +524,39 @@ export default function LandalFamilieweekendApp() {
               <div className="landal-card p-6 shadow-card mb-6">
                 <h3 className="text-xl font-bold text-landal-green text-center mb-4">🌤️ Weersvoorspelling</h3>
                 <div className="text-center">
-                  <p className="text-landal-gray mb-3">Verwachting voor 20-23 juni 2025</p>
-                  <a
-                    href="https://www.buienradar.nl/weer/exloo/nl/2758019"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="landal-button text-sm"
-                  >
-                    ☀️ Bekijk op Buienradar
-                  </a>
+                  <p className="text-landal-gray mb-4">Live weersvoorspelling voor Exloo</p>
+                  
+                  {/* Live Weather Widget */}
+                  <div className="bg-white rounded-lg border border-landal-border overflow-hidden mb-4">
+                    <iframe
+                      src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.8667&lon=6.9167&overname=2&zoom=8&naam=Exloo&size=2b&voor=0"
+                      width="100%"
+                      height="256"
+                      frameBorder="0"
+                      scrolling="no"
+                      className="w-full"
+                      title="Live Buienradar Exloo"
+                    ></iframe>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-2 justify-center">
+                    <a
+                      href="https://www.buienradar.nl/weer/exloo/nl/2758019"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="landal-button text-sm"
+                    >
+                      🌦️ Uitgebreide voorspelling
+                    </a>
+                    <a
+                      href="https://www.buienradar.nl/nederland/neerslag"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="landal-button-secondary text-sm"
+                    >
+                      ⚡ Live neerslag radar
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -580,6 +604,64 @@ export default function LandalFamilieweekendApp() {
                         <li>• Gratis WiFi & parkeren</li>
                       </ul>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* House Distribution */}
+              <div className="landal-card p-6 shadow-card mb-6">
+                <h3 className="text-xl font-bold text-landal-green text-center mb-4">🏠 Huisjesverdeling</h3>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Babybubble Huisje */}
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <div className="text-center mb-3">
+                        <h4 className="text-lg font-bold text-landal-green">Huisje 349</h4>
+                        <p className="text-sm text-landal-light-green font-medium">👶 De Babybubble</p>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between bg-white rounded p-2 border border-landal-border">
+                          <span className="text-gray-800 text-sm">Peter & Heleen</span>
+                          <span className="text-xs text-landal-gray">👥</span>
+                        </div>
+                        <div className="flex items-center justify-between bg-white rounded p-2 border border-landal-border">
+                          <span className="text-gray-800 text-sm">Thomas & Jasmin</span>
+                          <span className="text-xs text-landal-gray">👶 Freddy Lewis</span>
+                        </div>
+                        <div className="flex items-center justify-between bg-white rounded p-2 border border-landal-border">
+                          <span className="text-gray-800 text-sm">Gideon & Loes</span>
+                          <span className="text-xs text-landal-gray">👶 Philippe</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Avonturiers Huisje */}
+                    <div className="bg-landal-light rounded-lg p-4 border border-landal-border">
+                      <div className="text-center mb-3">
+                        <h4 className="text-lg font-bold text-landal-green">Huisje 391</h4>
+                        <p className="text-sm text-landal-light-green font-medium">🌟 De Avonturiers & Bouwers</p>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between bg-white rounded p-2 border border-landal-border">
+                          <span className="text-gray-800 text-sm">Isabelle & Rick</span>
+                          <span className="text-xs text-landal-gray">👥</span>
+                        </div>
+                        <div className="flex items-center justify-between bg-white rounded p-2 border border-landal-border">
+                          <span className="text-gray-800 text-sm">Charlotte & Daan</span>
+                          <span className="text-xs text-landal-gray">👧 Thirza & 👦 Daantje</span>
+                        </div>
+                        <div className="flex items-center justify-between bg-white rounded p-2 border border-landal-border">
+                          <span className="text-gray-800 text-sm">Thijs & Daphne</span>
+                          <span className="text-xs text-landal-gray">👥</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-landal-light rounded-lg p-3 border border-landal-border text-center">
+                    <p className="text-gray-700 text-sm">
+                      <strong>💡 Handig:</strong> Beide huisjes liggen dicht bij elkaar op het park en hebben dezelfde luxe faciliteiten!
+                    </p>
                   </div>
                 </div>
               </div>
